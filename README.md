@@ -1,4 +1,4 @@
-# Crivo_de_Eratosthenes
+# Crivo de Eratostenes
 Implementation of the Sieve of Eratosthenes using threads
 
 The Sieve of Eratosthenes is a very simple and efficient algorithm to generate prime numbers. This algorithm consists of removing the multiples of a determining set.
