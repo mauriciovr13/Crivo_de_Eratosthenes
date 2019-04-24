@@ -8,28 +8,29 @@
     typedef enum {FALSE, TRUE} Bool;
    #endif 
 
-typedef struct{
+typedef struct {
     int k;
     Bool vetor[21];
-} Gambiarra;
+}Gambiarra;
 
 void *PrintHello(void *threadid) {
    long tid;
    tid = (long)threadid;
-   sleep(15);
+   //sleep(15);
    printf("Hello World! It's me, thread #%ld!\n", tid);
    pthread_exit(NULL);
 }
 
-void *crivo(Gambiarra *gambi){
-    int kAux = gambi->k * gambi->k;
+void *crivo(void *gambi){
+    Gambiarra *gb = (Gambiarra *)gambi;
+    int kAux = gb->k * gb->k;
     while(kAux < 21) {
         for (int i = kAux; i < 21; i++) {
-            gambi->vetor[i] = (i % gambi->k == 0 ? TRUE : FALSE);
+            gb->vetor[i] = (i % gb->k == 0 ? TRUE : FALSE);
         }
-        for (int i = gambi->k+1; i < 21; i++) {
-            if(gambi->vetor[i] == FALSE){
-                gambi->k = i;
+        for (int i = gb->k+1; i < 21; i++) {
+            if(gb->vetor[i] == FALSE){
+                gb->k = i;
                 printf("%d", i);
                 break;
             }
@@ -54,7 +55,7 @@ int main (int argc, char *argv[]) {
     int rc;
     long t;
     for(t = 0; t < NUM_THREADS; t++){
-        rc = pthread_create(&threads[t], NULL, crivo, gambi);
+        rc = pthread_create(&threads[t], NULL, crivo, (void *)&gambi);
         gambi.k += 2;
         //rc = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
         if (rc){
@@ -64,7 +65,7 @@ int main (int argc, char *argv[]) {
     }
     
     for (int i = 0; i < 21; i++) {
-        if(gambi.vetor[i] == FALSE) printf("Primos %d ", i);  
+        if(gambi.vetor[i] == FALSE) printf("Primos %d \n", i);  
         
     }
     
