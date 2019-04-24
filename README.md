@@ -7,3 +7,5 @@ The operation can be seen through this animation below found in the article of [
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/New_Animation_Sieve_of_Eratosthenes.gif" alt="Sieve_of_Eratosthenes"></a><br><br>
 </div>
+
+g++ -pthread crivo_eratostenes.c
