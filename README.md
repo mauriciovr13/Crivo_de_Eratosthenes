@@ -9,3 +9,6 @@ The operation can be seen through this animation below found in the article of [
 </div>
 
 g++ -pthread crivo_eratostenes.c
+
+# Desenvolvimento
+Trabalho desenvolvido por [Giovani Botelho](https://github.com/giovanibotelho), [Maurício Vieira](https://github.com/mauriciovr13), [Rodrigo Marafelli](https://github.com/rodrigogmp) e [Vinícius Spinelli](https://github.com/vspinellig).
