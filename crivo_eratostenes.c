@@ -1,3 +1,13 @@
+/*
+ Universidade Federal de Lavras
+ GCC 177 - Programação paralela e concorrente
+ Código desenvolvido por:
+    Giovani Botelho
+    Maurício Vieira
+    Rodrigo Marafelli
+    Vinícius Spinelli
+*/
+
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
